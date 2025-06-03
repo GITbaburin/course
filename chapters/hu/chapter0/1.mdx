@@ -1,0 +1,47 @@
+# Bevezető[[introduction]]
+
+Üdvözlünk a Hugging Face tanfolyamon! Ez a bevezető segít neked kialakítani a munkakörnyezeted. Ha még csak most kezded a tanfolyamot, azt javasoljuk, először vess egy pillantást az [1. fejezetre](/course/chapter1), majd térj vissza ide, hogy felkészíthesd a környezetet, és kipróbálhasd a kódokat.
+
+Az összes modul, amelyet ebben a tanfolyamban használunk, Python modulként elérhető, így megmutatjuk, hogyan állíthatsz be egy Python környezetet (Python environment), és hogyan telepítheted a szükséges modulokat.
+
+Kétféle módszert mutatunk be a munkakörnyezet létrehozására: Google Colab notebook, illetve Python virtuális környezet (virtual environment) használatával. Válaszd azt, amelyik számodra a szimpatikusabb. Kezdők számára erősen ajánljuk a Colab notebook használatát.
+
+Megjegyzés: a Windows nem tárgyaljuk külön. Ha Windowst használsz, azt javasoljuk, hogy kövesd a Colab notebookos megoldást. Ha Linux disztribúciót vagy macOS-t használsz, akkor bármelyik itt ismertetett módszert választhatod.
+
+A tanfolyam nagy részéhez Hugging Face fiókra lesz szükséged. Javasoljuk, hogy most hozz létre egyet: [fiók létrehozása](https://huggingface.co/join).
+
+## Google Colab notebook használata[[using-a-google-colab-notebook]]
+
+A Colab notebook az egyik legkézenfekvőbb megoldás, csak nyiss egy notebookot a böngésződben, és már kezdhetsz is programozni!
+
+Ha még nem használtál Colabot, javasoljuk, hogy először nézd meg ezt a [bevezetőt](https://colab.research.google.com/notebooks/intro.ipynb). A Colab lehetővé teszi gyorsító hardverek (hardware accelerators), például GPU-k vagy TPU-k használatát, ráadásul kisebb terhelés esetén teljesen ingyenes.
+
+Miután otthonosan mozogsz a Colab felületén, hozz létre egy új notebookot, és kezdheted is a telepítést:
+
+<div class="flex justify-center">
+<img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/new_colab.png" alt="Üres Colab notebook" width="80%"/>
+</div>
+
+A következő lépés a tanfolyamon használt modulok telepítése. Ehhez a `pip`-et fogjuk használni, amely a Python csomagkezelője (package manager). Notebookokban rendszerparancsokat futtathatsz úgy, hogy a parancs elé egy `!` jelet teszel. Például így telepítheted a 🤗 Transformers modult:
+
+```
+!pip install transformers
+```
+
+Ellenőrizheted, hogy a csomag helyesen települt-e, ha importálod a Python környezetedben:
+
+```
+import transformers
+```
+
+<div class="flex justify-center">
+<img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/install.gif" alt="Gif, amely bemutatja a két fenti parancs eredményét: telepítés és importálás" width="80%"/>
+</div>
+
+Ez a 🤗 Transformers modul egy nagyon könnyű változatát telepíti. Konkrét gépi tanulási keretrendszereket (machine learning frameworks, például PyTorch vagy TensorFlow) nem telepít. Mivel sok különböző funkciót fogunk használni a modulból, azt ajánljuk, hogy telepítsd a fejlesztői verziót, amely tartalmaz minden szükséges függőséget (dependency) szinte bármilyen használati esethez:
+
+```
+!pip install transformers[sentencepiece]
+```
+
+Készen is állsz a tanfolyam további részére!
